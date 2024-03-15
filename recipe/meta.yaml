@@ -1,4 +1,4 @@
-{% set version = "9.10.0" %}
+{% set version = "9.12.0" %}
 
 package:
   name: medcoupling
@@ -7,19 +7,19 @@ package:
 source:
   - fn: 'medcoupling_{{ version }}.tar.gz'
     url: https://git.salome-platform.org/gitweb/?p=tools/medcoupling.git;a=snapshot;h=V{{ version.replace('.', '_') }};sf=tgz
-    sha256: 02087a4e59ffcdab6fc68460ffd86b03a80b5c0faa695b0bfb2142f1d0d3e5ea
+    sha256: a475ae8555f376565bb5bf55e396e784a07bd2841d49fd06051bec815692e453
   - fn: 'config_{{ version }}.tar.gz'
     url: https://git.salome-platform.org/gitweb/?p=tools/configuration.git;a=snapshot;h=V{{ version.replace('.', '_') }};sf=tgz
     folder: deps/config
-    sha256: d58f6749514ce49b00590a96d6dc9090a76a07c13690e2453403643afb40346c
+    sha256: 553838383e06e75d8d565301ed371832b1b9bcf98c83b4162ab98ba41b2e04b4
 
 
 build:
-  skip: True  # [osx]
+  skip: true  # [osx]
   detect_binary_files_with_prefix: true
   # string: py{{ CONDA_PY }}_mpi_{{ mpi }}_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}   # [mpi != "nompi"]
   # string: py{{ CONDA_PY }}_nompi_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}           # [mpi == "nompi"]
-  number: 1
+  number: 0
 
 requirements:
   build:
